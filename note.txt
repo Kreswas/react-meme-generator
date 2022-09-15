@@ -1,0 +1,133 @@
+                      Title (Meme Generator )
+
+1st button (create)     <option>name<option>
+
+                          button (download)
+
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+          #############################################
+
+
+
+import './App.css';
+import { useState } from 'react';
+
+function App() {
+  const [memeData, setMemeData] = useState([]);
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
+  const [image, setImage] = useState('');
+  const [customUrl, setCustomUrl] = useState(
+    'https://api.memegen.link/images/feelsgood/finally/did-it.png',
+  );
+
+  return (
+    <div>
+      <h1>Meme Generator</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+import './App.css';
+import { useState } from 'react';
+
+function App() {
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
+  const [image, setImage] = useState('');
+  const [customUrl, setCustomUrl] = useState(
+    'https://api.memegen.link/images/feelsgood/finally/did-it.jpg',
+  );
+
+  return (
+    <>
+      <div>
+        <h1>Meme Generator</h1>
+      </div>
+      <div>
+        {`https://api.memegen.link/images/${image}/${topText}/${bottomText}.jpg`}
+        <div>
+          <img src={customUrl} alt="meme" />
+        </div>
+
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <input
+            value={image}
+            onChange={(event) => {
+              setImage(event.currentTarget.value);
+            }}
+          />
+        </form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <input
+            value={topText}
+            onChange={(event) => {
+              setTopText(event.currentTarget.value);
+            }}
+          />
+        </form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <input
+            value={bottomText}
+            onChange={(event) => {
+              setBottomText(event.currentTarget.value);
+            }}
+          />
+        </form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <button
+            onClick={() => {
+              setCustomUrl(
+                `https://api.memegen/link/images/${image}/${topText}/${bottomText}.jpg`,
+              );
+            }}
+          >
+            Generate
+          </button>
+        </form>
+      </div>
+    </>
+  );
+}
+
+export default App;

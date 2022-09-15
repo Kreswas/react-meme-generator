@@ -1,0 +1,34 @@
+h1 {
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  border: 2px solid black;
+  max-width: 35%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 0.9rem;
+  margin: auto;
+  padding: 0.7rem 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  width: 40%;
+  display: block;
+  border-bottom: solid black;
+  transition: all 0.3s;
+}
