@@ -7,9 +7,7 @@ function App() {
   const [image, setImage] = useState('');
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
-  const [url, setUrl] = useState(
-    'https://api.memegen.link/images/feelsgood/finally/did-it.jpg',
-  );
+  const [url, setUrl] = useState('https://api.memegen.link/images.jpg');
   const handleDownload = async () => {
     await axios
       .get(url, {
