@@ -46,6 +46,7 @@ function App() {
         }}
       >
         <label>
+          Top text
           <input
             placeholder="Top Text"
             value={topText}
@@ -61,6 +62,7 @@ function App() {
         }}
       >
         <label>
+          Bottom text
           <input
             placeholder="Bottom Text"
             value={bottomText}
