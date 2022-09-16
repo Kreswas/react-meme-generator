@@ -19,6 +19,20 @@ function App() {
         fileDownload(res.data, `meme_${image}.jpg`);
       });
   };
+  function urlConstruct(memeType, upperText, lowerText) {
+    if (memeType === '') {
+      memeType = 'feelsgood';
+    }
+    if (upperText !== '') {
+      upperText = `/${upperText}`;
+    } else {
+      upperText = `/_`;
+    }
+    if (lowerText !== '') {
+      lowerText = `/${lowerText}`;
+    }
+    return `${memeType}${upperText}${lowerText}`;
+  }
   return (
     <div>
       <h1>Meme Generator</h1>
@@ -31,6 +45,7 @@ function App() {
         }}
       >
         <label>
+          Meme template
           <input
             placeholder="Template"
             value={image}
@@ -80,13 +95,16 @@ function App() {
         <button
           onClick={() => {
             setUrl(
-              `https://api.memegen.link/images/${image}/${topText}/${bottomText}.jpg`,
+              `https://api.memegen.link/images/${urlConstruct(
+                image,
+                topText,
+                bottomText,
+              )}.jpg`,
             );
           }}
         >
           Generate
         </button>
-
         {(event) => {
           event.preventDefault();
         }}
@@ -95,5 +113,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
