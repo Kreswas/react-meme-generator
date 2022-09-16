@@ -23,46 +23,52 @@ function App() {
     <div>
       <h1>Meme Generator</h1>
       <div>
-        <img src={url} alt="meme" />
+        <img src={url} alt="meme" data-test-id="meme-image" />
       </div>
       <form
         onSubmit={(event) => {
           event.preventDefault();
         }}
       >
-        <input
-          placeholder="Template"
-          value={image}
-          onChange={(event) => {
-            setImage(event.currentTarget.value);
-          }}
-        />
+        <label>
+          <input
+            placeholder="Template"
+            value={image}
+            onChange={(event) => {
+              setImage(event.currentTarget.value);
+            }}
+          />
+        </label>
       </form>
       <form
         onSubmit={(event) => {
           event.preventDefault();
         }}
       >
-        <input
-          placeholder="Top Text"
-          value={topText}
-          onChange={(event) => {
-            setTopText(event.currentTarget.value);
-          }}
-        />
+        <label>
+          <input
+            placeholder="Top Text"
+            value={topText}
+            onChange={(event) => {
+              setTopText(event.currentTarget.value);
+            }}
+          />
+        </label>
       </form>
       <form
         onSubmit={(event) => {
           event.preventDefault();
         }}
       >
-        <input
-          placeholder="Bottom Text"
-          value={bottomText}
-          onChange={(event) => {
-            setBottomText(event.currentTarget.value);
-          }}
-        />
+        <label>
+          <input
+            placeholder="Bottom Text"
+            value={bottomText}
+            onChange={(event) => {
+              setBottomText(event.currentTarget.value);
+            }}
+          />
+        </label>
       </form>
       <form
         onSubmit={(event) => {
@@ -78,12 +84,10 @@ function App() {
         >
           Generate
         </button>
-      </form>
-      <form
-        onSubmit={(event) => {
+
+        {(event) => {
           event.preventDefault();
         }}
-      >
         <button onClick={handleDownload}>Download</button>
       </form>
     </div>
